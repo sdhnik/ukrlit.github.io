@@ -132,6 +132,12 @@ $.fn.multimedia_portfolio = function(options) {
 				      mousewheelposition+=.3; if(mousewheelposition>elements.length) mousewheelposition = elements.length;
 				      caroussel_portfolio_vue(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);	     
 			      } 
+		      }).on("swipeleft",function(){
+				      mousewheelposition-=.3; if(mousewheelposition<0) mousewheelposition = 0;
+				      caroussel_portfolio_vue(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);
+		      }).on("swiperight",function(){
+				      mousewheelposition+=.3; if(mousewheelposition>elements.length) mousewheelposition = elements.length;
+				      caroussel_portfolio_vue(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);	
 		      });
 		}
 		
