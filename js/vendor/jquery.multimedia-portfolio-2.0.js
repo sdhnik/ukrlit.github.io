@@ -133,11 +133,11 @@ $.fn.multimedia_portfolio = function(options) {
 				      caroussel_portfolio_vue(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);	     
 			      } 
 		      }).on("swr",function(){
-				      mousewheelposition-=.9; if(mousewheelposition<0) mousewheelposition = 0;
-				      caroussel_portfolio_vue(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);
+				      mousewheelposition-=1.8; if(mousewheelposition<0) mousewheelposition = 0;
+				      caroussel_portfolio_vue_mobile(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);
 		      }).on("swl",function(){
-				      mousewheelposition+=.9; if(mousewheelposition>elements.length) mousewheelposition = elements.length;
-				      caroussel_portfolio_vue(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);	
+				      mousewheelposition+=1.8; if(mousewheelposition>elements.length) mousewheelposition = elements.length;
+				      caroussel_portfolio_vue_mobile(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);	
 		      });
 		}
 		
@@ -175,6 +175,20 @@ function caroussel_portfolio_vue(current, portfolio, elements, settings, ratio_l
 	}
 	portfolio.css('left',(-decalage)+'px');
 	if (!bslider) $('.ui-slider-handle').css('left', parseInt((current/elements.length)*100)+'%');
+};
+function caroussel_portfolio_vue_mobile(current, portfolio, elements, settings, ratio_largeur, bslider) {
+	 
+	var decalage = parseInt(settings.width/settings.nbelem*current*ratio_largeur);
+	for ( var i = 0; i < elements.length; i++ ) {
+		$(elements[i]).find('.flv-type, .mp3-type, iframe').each(function() {
+			if ( (((i*settings.width/settings.nbelem)-parseInt(decalage)) < 0) || (((i*settings.width/settings.nbelem)-parseInt(decalage)) > (settings.width-settings.width/settings.nbelem + 26)) ) {
+				$(this).css('visibility','hidden');
+			} else {
+				$(this).css('visibility','visible');}
+		});
+	}
+	portfolio.animate({'left':(-decalage)+'px'}, 800);
+	if (!bslider) $('.ui-slider-handle').animate({'left': parseInt((current/elements.length)*100)+'%'}, 800);
 };
 
 function convertHex(hex,opacity){
