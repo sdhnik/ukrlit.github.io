@@ -9,15 +9,15 @@
 (function($) {
 
 $.fn.multimedia_portfolio = function(options) {
-	this.each(function(){ 	
+	this.each(function(){
+	if($(window).width() > 980) {
 		var uniqueID = new Date();
 		var rel_id=uniqueID.getTime();
 		var mousewheelposition = 0;
 		var defaultwidth = 320, defaultheight = 210;
 		$(this).wrap("<div class='portfolio-container'></div>");
 		var portfolio = $(this);
-		var settings = { width: 700, baseDir: '.', nbelem: 3
-		};
+		var settings = { width: 700, baseDir: '.', nbelem: 3};
 		if(options) $.extend(settings, options);
 		
 		var def_element_width = parseInt(settings.width/settings.nbelem);
@@ -25,6 +25,7 @@ $.fn.multimedia_portfolio = function(options) {
 
 		var elements = $(this).children().not('.portfolio-loading-bar');
 		var borderwidth = parseInt(((settings.width)/900)*7);
+		var touchlength = settings.width/200;
 		var titlesize = (def_element_width/366);
 		$('.portfolio-container').prepend("<div class='portfolio-bg-left'>&nbsp;</div><div class='portfolio-bg-right'>&nbsp;</div>").append("<div class='masque-left'>&nbsp;</div><div class='masque-right'>&nbsp;</div>");
 		if (elements.length > settings.nbelem) $('.portfolio-container').append("<div class='portfolio-bg-bottom-left'>&nbsp;</div><div class='portfolio-bg-bottom-right'>&nbsp;</div>");
@@ -133,17 +134,21 @@ $.fn.multimedia_portfolio = function(options) {
 				      caroussel_portfolio_vue(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);	     
 			      } 
 		      }).on("swr",function(){
-				      mousewheelposition-=1.8; if(mousewheelposition<0) mousewheelposition = 0;
+				      mousewheelposition-=touchlength; if(mousewheelposition<0) mousewheelposition = 0;
 				      caroussel_portfolio_vue_mobile(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);
 		      }).on("swl",function(){
-				      mousewheelposition+=1.8; if(mousewheelposition>elements.length) mousewheelposition = elements.length;
+				      mousewheelposition+=touchlength; if(mousewheelposition>elements.length) mousewheelposition = elements.length;
 				      caroussel_portfolio_vue_mobile(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);	
 		      });
 		}
 		
 		$(".portfolio-img a").fancybox({padding: 1, 'onStart' : function() {$('.flv-type').css('visibility','hidden');}, 'onClosed': function(){caroussel_portfolio_vue(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);}});
 		$(".portfolio-txt a").addClass('fancybox.iframe').fancybox({padding: 1, 'onStart' : function() {$('.flv-type').css('visibility','hidden');}, 'onClosed': function(){caroussel_portfolio_vue(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);}});
-		
+	} else {
+		$(".logo").removeClass("col-xs-5");
+		$(".parts").remove();
+		$(".content-block").html("<div class='error404'><p class='text-404-first'>Даний додаток не працює при таких параметрах екрану</p><p class='text-404-second'>Мінімальна ширина екрану повинна бути 1024px</p><p class='text-404-threth'>Вибачте за незручність</p></div>")
+	}
 	});
 };
 

@@ -46,6 +46,14 @@ footer {
 	white-space: nowrap;
 }
 
+@media(max-width:400px) {
+	.logo {
+		white-space: normal;
+		font-size: 30px;
+		text-align: center;
+	}
+}
+
 .parts {
 	text-align:right;
 	font-family: "myforum";
@@ -217,7 +225,7 @@ position: relative; z-index: 100; }
 	box-shadow:0 0 0 1px rgba(255,255,255,.5), 0 0 2px 1px #ccc;
 	-webkit-transition: box-shadow .3s ease;-moz-transition: box-shadow .3s ease;transition: box-shadow .3s ease;
 }
-.portfolio-txt .link-block:hover, .portfolio-link .link-block:hover, .portfolio-img .link-block:hover {box-shadow:0 0 0 2px #fff, 0 0 8px 1px #ccc; text-decoration:none; color:#000;}
+.portfolio-txt .link-block:hover, .portfolio-link .link-block:hover {box-shadow:0 0 0 2px #fff, 0 0 8px 1px #ccc; text-decoration:none;}
 .link-block h1{margin:0;font-size: 48px;}
 .link-block p {margin:0;font-size: 24px;line-height: 120%}
 
@@ -225,3 +233,22 @@ position: relative; z-index: 100; }
 .link-block .bigtitle span{font-size: 34px;}
 .link-block .bigtitle-mp3 {padding-bottom:37px; font-size: 20px;}
 .link-block .test {margin-top:8px;}
+
+.error404 {display:block; width:87%; height:125px; position: absolute; top:0; bottom:0; left:0; right:0; margin:auto;}
+.text-404-first { font-size: 34px; line-height: 120%; color: #fff; font-family: "myforum"; text-align: center; margin:0 0 15px;}
+.text-404-second, .text-404-threth { font-size: 24px; line-height: 120%; color: #fff; font-family: "myforum"; text-align: center; margin:0 0 10px;}
+.text-404-threth {margin:0;}
+
+@media (max-width: 900px) {
+	.error404 {height:165px;}
+}
+@media (max-width: 600px) {
+	.error404 {height:190px;}
+}
+@media (max-width: 500px) {
+	.error404 {height:250px;}
+}
+@media (max-width: 340px) {
+	.text-404-first {font-size: 32px;}
+	.text-404-second, .text-404-threth { font-size: 20px;}
+}
