@@ -230,15 +230,54 @@ position: relative; z-index: 100; }
 .link-block p {margin:0;font-size: 24px;line-height: 120%}
 
 .link-block .bigtitle {font-size: 28px;line-height: 30px; padding:15px 0;width:100%;position:absolute;bottom:0;left:0;background-color: rgba(255,255,255,.6);}
+.link-block .bigtitle-smoll {font-size: 26px;}
 .link-block .bigtitle span{font-size: 34px;}
+.link-block .bigtitle b {display:block;font-weight: normal;font-size: 20px; line-height:100%;}
+.link-block .bigtitle b.bblock {font-size: 28px; line-height: 30px;}
 .link-block .bigtitle-mp3 {padding-bottom:37px; font-size: 20px;}
 .link-block .test {margin-top:8px;}
 
+@media (max-width: 1300px) {
+	.link-block .bigtitle {font-size: 24px;}
+	.link-block .bigtitle-smoll {font-size: 22px;}
+	.link-block .bigtitle span{font-size: 30px;}
+	.link-block .bigtitle-mp3 {font-size: 16px;}
+	.link-block .bigtitle b {font-size: 16px;}
+	.link-block .bigtitle b.bblock {font-size: 24px;}
+}
+
+@media (max-width: 1170px) {
+	.link-block h1{font-size: 40px;}
+	.link-block p {font-size: 20px;}
+	.link-block .bigtitle {font-size: 18px; line-height: 20px;}
+	.link-block .bigtitle-smoll {font-size: 16px;}
+	.link-block .bigtitle span{font-size: 24px;}
+	.link-block .bigtitle-mp3 {font-size: 12px;}
+	.link-block .bigtitle b {font-size: 12px;}
+	.link-block .bigtitle b.bblock {font-size: 18px;}
+}
+
 .error404 {display:block; width:87%; height:125px; position: absolute; top:0; bottom:0; left:0; right:0; margin:auto;}
 .text-404-first { font-size: 34px; line-height: 120%; color: #fff; font-family: "myforum"; text-align: center; margin:0 0 15px;}
-.text-404-second, .text-404-threth { font-size: 24px; line-height: 120%; color: #fff; font-family: "myforum"; text-align: center; margin:0 0 10px;}
+.text-404-second, .text-404-threth, .alarm { font-size: 24px; line-height: 120%; color: #fff; font-family: "myforum"; text-align: center; margin:0 0 10px;}
 .text-404-threth {margin:0;}
 
+.alarm {font-size: 28px; margin-top:20px; color: #ff0000; opacity: 0;}
+
+@media (min-width: 980px) {
+	.alarm {-webkit-animation: alarm 5s infinite; animation: alarm 5s infinite;}
+
+}
+@-webkit-keyframes alarm {
+  0%   { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes alarm {
+  0%   { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
 @media (max-width: 900px) {
 	.error404 {height:165px;}
 }

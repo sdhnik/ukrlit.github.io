@@ -147,7 +147,7 @@ $.fn.multimedia_portfolio = function(options) {
 	} else {
 		$(".logo").removeClass("col-xs-5");
 		$(".parts").remove();
-		$(".content-block").html("<div class='error404'><p class='text-404-first'>Даний додаток не працює при таких параметрах екрану</p><p class='text-404-second'>Мінімальна ширина екрану повинна бути 1024px</p><p class='text-404-threth'>Вибачте за незручність</p></div>")
+		$(".content-block").html("<div class='error404'><p class='text-404-first'>Даний додаток не працює при таких параметрах екрану</p><p class='text-404-second'>Мінімальна ширина екрану повинна бути 1024px</p><p class='text-404-threth'>Вибачте за незручність</p><p class='alarm'>Перезавантажте додаток</p></div>")
 	}
 	});
 };
