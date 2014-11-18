@@ -225,7 +225,8 @@ position: relative; z-index: 100; }
 	box-shadow:0 0 0 1px rgba(255,255,255,.5), 0 0 2px 1px #ccc;
 	-webkit-transition: box-shadow .3s ease;-moz-transition: box-shadow .3s ease;transition: box-shadow .3s ease;
 }
-.portfolio-txt .link-block:hover, .portfolio-link .link-block:hover {box-shadow:0 0 0 2px #fff, 0 0 8px 1px #ccc; text-decoration:none;}
+.link-block:hover, .link-block:focus, .link-block:active {color:#000; text-decoration: none;}
+.portfolio-txt .link-block:hover, .portfolio-link .link-block:hover, .portfolio-txt .link-block:focus, .portfolio-link .link-block:focus, .portfolio-txt .link-block:active, .portfolio-link .link-block:active {box-shadow:0 0 0 2px #fff, 0 0 8px 1px #ccc; text-decoration:none;}
 .link-block h1{margin:0;font-size: 48px;}
 .link-block p {margin:0;font-size: 24px;line-height: 120%}
 
@@ -252,8 +253,8 @@ position: relative; z-index: 100; }
 	.link-block .bigtitle {font-size: 18px; line-height: 20px;}
 	.link-block .bigtitle-smoll {font-size: 16px;}
 	.link-block .bigtitle span{font-size: 24px;}
-	.link-block .bigtitle-mp3 {font-size: 12px;}
-	.link-block .bigtitle b {font-size: 12px;}
+	.link-block .bigtitle-mp3 {font-size: 14px;}
+	.link-block .bigtitle b {font-size: 14px;}
 	.link-block .bigtitle b.bblock {font-size: 18px;}
 }
 
@@ -262,7 +263,7 @@ position: relative; z-index: 100; }
 .text-404-second, .text-404-threth, .alarm { font-size: 24px; line-height: 120%; color: #fff; font-family: "myforum"; text-align: center; margin:0 0 10px;}
 .text-404-threth {margin:0;}
 
-.alarm {font-size: 28px; margin-top:20px; color: #ff0000; opacity: 0;}
+.alarm {font-size: 28px; margin-top:20px; color: #FF2F2F; opacity: 0;}
 
 @media (min-width: 980px) {
 	.alarm {-webkit-animation: alarm 5s infinite; animation: alarm 5s infinite;}
