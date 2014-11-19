@@ -15,10 +15,10 @@ $.fn.multimedia_portfolio = function(options) {
 		var rel_id=uniqueID.getTime();
 		var mousewheelposition = 0;
 		var defaultwidth = 320, defaultheight = 210;
-		var jsFolder = "../../js/vendor/";
+		var jsFolder = "/js/vendor/";
 		$(this).wrap("<div class='portfolio-container'></div>");
 		var portfolio = $(this);
-		var settings = { width: 700, baseDir: '.', nbelem: 3};
+		var settings = { width: 700, nbelem: 3};
 		if(options) $.extend(settings, options);
 		
 		var def_element_width = parseInt(settings.width/settings.nbelem);
