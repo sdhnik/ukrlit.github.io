@@ -15,6 +15,7 @@ $.fn.multimedia_portfolio = function(options) {
 		var rel_id=uniqueID.getTime();
 		var mousewheelposition = 0;
 		var defaultwidth = 320, defaultheight = 210;
+		var jsFolder = "../../js/vendor/";
 		$(this).wrap("<div class='portfolio-container'></div>");
 		var portfolio = $(this);
 		var settings = { width: 700, baseDir: '.', nbelem: 3};
@@ -72,11 +73,12 @@ $.fn.multimedia_portfolio = function(options) {
 		      			elementclass = 'portfolio-txt';
 
 					} else if (currenthref.toLowerCase().indexOf('.mp3') > 0) {
-						$(elements[i]).empty().flash({swf: settings.baseDir+"/player_mp3_maxi.swf", flashvars: {mp3: currenthref, showslider: '1', width: (currentwidth-10), height: 20, bgcolor1: '1f96c3', bgcolor2: '1f96c3', buttoncolor: 'ffffff', buttonovercolor: '0d5e7c', slidercolor1: 'ffffff', slidercolor2: 'ffffff', sliderovercolor: '0d5e7c'}, wmode: 'transparent', width: (currentwidth-10), height: 20});
+						$(elements[i]).empty().append('<div id="audioplayer'+i+'" class="audioplayer"><ul class="amazingaudioplayer-audios" style="display:none;"><li><div class="amazingaudioplayer-source" data-src="'+currenthref+'" data-type="audio/mpeg" /></li></ul></div></div>');
 						currentstartimage = 'background-image: url('+currentstartimage+');'
 						var currentpadding = (currentheight / 4);
 
-						$(elements[i]).find('object').addClass('mp3-type').attr('title', currenttitle).wrap("<span class='portfolio-mp3-container' style='top: "+(currentheight-20)+"px; margin-left: -"+parseInt((currentwidth-10)/2)+"px;'></span>");
+						$(elements[i]).find('#audioplayer'+i).amazingaudioplayer({ jsfolder:jsFolder, skinsfoldername:"", titleinbarwidthmode:"fixed", timeformatlive:"%CURRENT% / LIVE", volumeimagewidth:24, barbackgroundimage:"", showtime:false, titleinbarwidth:80, showprogress:true, random:false, titleformat:"%TITLE%", height:600, loadingformat:"Loading...", prevnextimage:"img/prevnext-24-24-0.png", showinfo:false, imageheight:100, skin:"Bar", loopimage:"img/loop-24-24-0.png", loopimagewidth:24, showstop:false, prevnextimageheight:24, infoformat:"By %ARTIST% %ALBUM%<br />%INFO%", stopotherplayers:true, showloading:false, forcefirefoxflash:false, showvolumebar:true,   imagefullwidth:false, width:300, showtitleinbar:false, showloop:false, volumeimage:"img/volume-24-24-0.png", playpauseimagewidth:24, loopimageheight:24, tracklistitem:10, tracklistitemformat:"%ID%. %TITLE% <span style='position:absolute;top:0;right:0;'>%DURATION%</span>", prevnextimagewidth:24, tracklistarrowimage:"img/tracklistarrow-48-16-0.png", playpauseimageheight:24, showbackgroundimage:false, imagewidth:100, stopimage:"img/stop-24-24-0.png", playpauseimage:"img/playpause-24-24-0.png", showprevnext:false, backgroundimage:"", autoplay:false, volumebarpadding:8, progressheight:8, showtracklistbackgroundimage:false, titleinbarscroll:true, showtitle:false, defaultvolume:-1, tracklistarrowimageheight:16, heightmode:"auto", titleinbarformat:"%TITLE%", showtracklist:false, stopimageheight:24, volumeimageheight:24, stopimagewidth:24, volumebarheight:80, noncontinous:false, tracklistbackgroundimage:"", showbarbackgroundimage:false, showimage:false, tracklistarrowimagewidth:48, timeformat:"%CURRENT% / %DURATION%", showvolume:true, fullwidth:false, loop:0, preloadaudio:true });
+						$(elements[i]).find('.audioplayer').addClass('mp3-type').attr('title', currenttitle).wrap("<span class='portfolio-mp3-container' style='width: "+(currentwidth-10)+"px; top: "+(currentheight-20)+"px; margin-left: -"+parseInt((currentwidth-10)/2)+"px;'></span>");
 						$(elements[i]).find('span').wrap("<div class='link-block' style='height:"+currentheight+"px; "+currentstartimage+"'></div>")
 						$(elements[i]).find('.link-block').prepend("<span class='bigtitle bigtitle-mp3'>"+currenttitle+"</span>")
 
