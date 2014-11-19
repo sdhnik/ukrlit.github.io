@@ -26,7 +26,7 @@ $.fn.multimedia_portfolio = function(options) {
 
 		var elements = $(this).children().not('.portfolio-loading-bar');
 		var borderwidth = parseInt(((settings.width)/900)*7);
-		var touchlength = settings.width/200;
+		var touchlength = (def_element_width*2)/100;
 		var titlesize = (def_element_width/366);
 		$('.portfolio-container').prepend("<div class='portfolio-bg-left'>&nbsp;</div><div class='portfolio-bg-right'>&nbsp;</div>").append("<div class='masque-left'>&nbsp;</div><div class='masque-right'>&nbsp;</div>");
 		if (elements.length > settings.nbelem) $('.portfolio-container').append("<div class='portfolio-bg-bottom-left'>&nbsp;</div><div class='portfolio-bg-bottom-right'>&nbsp;</div>");
