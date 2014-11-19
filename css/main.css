@@ -224,7 +224,7 @@ position: relative; z-index: 100; }
 .link-block .bigtitle span{font-size: 34px;}
 .link-block .bigtitle b {display:block;font-weight: normal;font-size: 20px; line-height:100%;}
 .link-block .bigtitle b.bblock {font-size: 28px; line-height: 30px;}
-.link-block .bigtitle-mp3 {padding-bottom:37px; font-size: 20px;}
+.link-block .bigtitle-mp3 {padding-bottom:37px; font-size: 20px; line-height: 110%;}
 .link-block .test {margin-top:8px;}
 
 @media (max-width: 1300px) {
