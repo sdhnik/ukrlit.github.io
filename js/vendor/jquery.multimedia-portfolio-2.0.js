@@ -30,7 +30,7 @@ $.fn.multimedia_portfolio = function(options) {
 		$('.portfolio-container').prepend("<div class='portfolio-bg-left'>&nbsp;</div><div class='portfolio-bg-right'>&nbsp;</div>").append("<div class='masque-left'>&nbsp;</div><div class='masque-right'>&nbsp;</div>");
 		if (elements.length > settings.nbelem) $('.portfolio-container').append("<div class='portfolio-bg-bottom-left'>&nbsp;</div><div class='portfolio-bg-bottom-right'>&nbsp;</div>");
 		var ratio_largeur = ((elements.length*def_element_width - settings.width) / (elements.length*def_element_width));
-		var touchlength = (ratio_largeur*settings.nbelem*(def_element_width*2))/settings.width;
+		var touchlength = (ratio_largeur*settings.nbelem*(def_element_width*3))/settings.width;
 		$(".portfolio-container").css("width", settings.width+'px');
 		$(".portfolio-container").css("height", portfolio_height+'px');
 		$(".portfolio-container").css("margin-top", -(portfolio_height / 2) + 12);
