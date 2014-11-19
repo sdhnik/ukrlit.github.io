@@ -30,7 +30,7 @@ $.fn.multimedia_portfolio = function(options) {
 		$('.portfolio-container').prepend("<div class='portfolio-bg-left'>&nbsp;</div><div class='portfolio-bg-right'>&nbsp;</div>").append("<div class='masque-left'>&nbsp;</div><div class='masque-right'>&nbsp;</div>");
 		if (elements.length > settings.nbelem) $('.portfolio-container').append("<div class='portfolio-bg-bottom-left'>&nbsp;</div><div class='portfolio-bg-bottom-right'>&nbsp;</div>");
 		var ratio_largeur = ((elements.length*def_element_width - settings.width) / (elements.length*def_element_width));
-		var touchlength = settings.width/(ratio_largeur*settings.nbelem*(def_element_width*2));
+		var touchlength = def_element_width*2;
 		$(".portfolio-container").css("width", settings.width+'px');
 		$(".portfolio-container").css("height", portfolio_height+'px');
 		$(".portfolio-container").css("margin-top", -(portfolio_height / 2) + 12);
@@ -185,7 +185,7 @@ function caroussel_portfolio_vue(current, portfolio, elements, settings, ratio_l
 };
 function caroussel_portfolio_vue_mobile(current, portfolio, elements, settings, ratio_largeur, bslider) {
 	 
-	var decalage = parseInt(settings.width/settings.nbelem*current*ratio_largeur);
+	var decalage = current;
 	for ( var i = 0; i < elements.length; i++ ) {
 		$(elements[i]).find('.flv-type, .mp3-type, iframe').each(function() {
 			if ( (((i*settings.width/settings.nbelem)-parseInt(decalage)) < 0) || (((i*settings.width/settings.nbelem)-parseInt(decalage)) > (settings.width-settings.width/settings.nbelem + 26)) ) {
