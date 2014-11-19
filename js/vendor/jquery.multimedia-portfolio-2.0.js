@@ -135,10 +135,10 @@ $.fn.multimedia_portfolio = function(options) {
 				      caroussel_portfolio_vue(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);	     
 			      } 
 		      }).on("swr",function(){
-				      mousewheelposition-=9; if(mousewheelposition<0) mousewheelposition = 0;
+				      mousewheelposition-=3; if(mousewheelposition<0) mousewheelposition = 0;
 				      caroussel_portfolio_vue_mobile(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);
 		      }).on("swl",function(){
-				      mousewheelposition+=9; if(mousewheelposition>elements.length) mousewheelposition = elements.length;
+				      mousewheelposition+=3; if(mousewheelposition>elements.length) mousewheelposition = elements.length;
 				      caroussel_portfolio_vue_mobile(mousewheelposition, portfolio, elements, settings, ratio_largeur, false);	
 		      });
 		}
