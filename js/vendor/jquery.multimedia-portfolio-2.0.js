@@ -26,11 +26,11 @@ $.fn.multimedia_portfolio = function(options) {
 
 		var elements = $(this).children().not('.portfolio-loading-bar');
 		var borderwidth = parseInt(((settings.width)/900)*7);
-		var touchlength = (def_element_width*2)/100;
 		var titlesize = (def_element_width/366);
 		$('.portfolio-container').prepend("<div class='portfolio-bg-left'>&nbsp;</div><div class='portfolio-bg-right'>&nbsp;</div>").append("<div class='masque-left'>&nbsp;</div><div class='masque-right'>&nbsp;</div>");
 		if (elements.length > settings.nbelem) $('.portfolio-container').append("<div class='portfolio-bg-bottom-left'>&nbsp;</div><div class='portfolio-bg-bottom-right'>&nbsp;</div>");
 		var ratio_largeur = ((elements.length*def_element_width - settings.width) / (elements.length*def_element_width));
+		var touchlength = (def_element_width*2)/ratio_largeur*settings.nbelem*100;
 		$(".portfolio-container").css("width", settings.width+'px');
 		$(".portfolio-container").css("height", portfolio_height+'px');
 		$(".portfolio-container").css("margin-top", -(portfolio_height / 2) + 12);
