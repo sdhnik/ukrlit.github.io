@@ -95,7 +95,10 @@ a.part-link:hover:before {
 .part-link-last{
 	max-width:400px;
 }
-
+@media(max-width:1170px) {
+	.part-link{max-width:200px;}
+	.part-link-last{max-width:300px;}	
+}
 .footer-content {
 	text-align:center;
 	color: #000;
